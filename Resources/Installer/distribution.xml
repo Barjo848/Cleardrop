@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <title>Cleardrop</title>
+    <welcome file="welcome.txt" mime-type="text/plain"/>
+    <license file="license.txt" mime-type="text/plain"/>
+    <conclusion file="conclusion.txt" mime-type="text/plain"/>
+    <options customize="never" require-scripts="false" hostArchitectures="arm64"/>
+    <!-- Offer "for all users" (/Applications) or "for me only" (~/Applications). -->
+    <domains enable_anywhere="false" enable_currentUserHome="true" enable_localSystem="true"/>
+    <volume-check>
+        <allowed-os-versions>
+            <os-version min="14.0"/>
+        </allowed-os-versions>
+    </volume-check>
+    <choices-outline>
+        <line choice="default">
+            <line choice="io.github.barjo848.Cleardrop.pkg"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="io.github.barjo848.Cleardrop.pkg" visible="false">
+        <pkg-ref id="io.github.barjo848.Cleardrop.pkg"/>
+    </choice>
+    <pkg-ref id="io.github.barjo848.Cleardrop.pkg" version="@VERSION@" onConclusion="none">Cleardrop-component.pkg</pkg-ref>
+</installer-gui-script>

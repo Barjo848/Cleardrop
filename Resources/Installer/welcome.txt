@@ -1,0 +1,7 @@
+This installs Cleardrop @VERSION@.
+
+Cleardrop removes metadata from a PDF and saves a new copy. It works offline, has no account and collects no telemetry. Your original files are never changed.
+
+It removes structural metadata such as the author, producer and file ID. It does not make a document anonymous if the text or images on its pages identify you.
+
+The installer adds one item: the Cleardrop app. To remove it later, open Cleardrop and choose Cleardrop → Uninstall Cleardrop…

@@ -1,0 +1,6 @@
+build/
+dist/
+icon.iconset/
+.DS_Store
+*.swp
+*~

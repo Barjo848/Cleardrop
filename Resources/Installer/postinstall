@@ -1,0 +1,16 @@
+#!/bin/bash
+# Runs after the files are copied. $2 is the folder Cleardrop.app was installed into.
+APP="$2/Cleardrop.app"
+[ -d "$APP" ] || exit 0
+
+# The installer copies files as the administrator. Hand the app to the person installing
+# it, so they can later move it to the Trash without a password.
+if [ -n "$USER" ] && [ "$USER" != "root" ]; then
+    /usr/sbin/chown -R "$USER" "$APP" || true
+    # Open the app as that person, not as the installer.
+    USER_ID="$(/usr/bin/id -u "$USER" 2>/dev/null)"
+    if [ -n "$USER_ID" ]; then
+        /bin/launchctl asuser "$USER_ID" /usr/bin/open "$APP" || true
+    fi
+fi
+exit 0

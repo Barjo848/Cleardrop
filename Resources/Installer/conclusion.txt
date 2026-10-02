@@ -1,0 +1,5 @@
+Cleardrop is installed and is opening now.
+
+Drop a PDF on its window, or choose File → Open.
+
+You no longer need this installer. To remove Cleardrop later, open it and choose Cleardrop → Uninstall Cleardrop…
